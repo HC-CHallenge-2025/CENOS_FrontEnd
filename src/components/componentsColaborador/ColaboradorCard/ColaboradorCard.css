@@ -1,0 +1,85 @@
+
+/* ESTILO BASE (XL / Desktop Grande >= 1200px) */
+.colaborador-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    min-height: 200px;
+    background-color: white;
+}
+
+.collaborator-name-info {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.card-expansion p {
+    font-size: 0.95rem;
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .colaborador-card {
+        padding: 20px;
+    }
+    .collaborator-name-info {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .colaborador-card {
+        padding: 18px;
+        min-height: 180px;
+    }
+    .collaborator-name-info {
+        font-size: 1.05rem;
+    }
+    .card-expansion p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .colaborador-card {
+        padding: 15px;
+        min-height: auto;
+    }
+    .collaborator-name-info {
+        font-size: 1rem;
+    }
+    .details-button {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .colaborador-card {
+        padding: 12px;
+    }
+    .card-header {
+        flex-direction: column; /* Empilha ID e Botão Detalhes */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .details-button {
+        /* Move o botão para o canto direito se estiver empilhado */
+        align-self: flex-end; 
+        margin-top: -10px;
+    }
+    .collaborator-name-info {
+        font-size: 0.95rem;
+    }
+    .card-expansion p {
+        font-size: 0.8rem;
+    }
+}

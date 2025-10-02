@@ -1,0 +1,110 @@
+/* src/components/AuxHeader/AuxHeader.css */
+
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+.aux-header-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 30px; /* Padding maior */
+    gap: 15px; /* Espaçamento entre botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+}
+
+.nav-button {
+    /* Estilo Base */
+    flex-grow: 0;
+    min-width: 150px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra para efeito flutuante */
+    transition: all 0.3s ease;
+    
+    /* 🎯 GRADIENTE PADRÃO (Não Selecionado) 🎯 */
+    /* De azul forte (canto inferior esquerdo) para verde água (canto superior direito) */
+    background: linear-gradient(145deg, #187bcd 0%, #17a2b8 100%);
+    border: none;
+}
+
+.nav-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO SELECIONADO */
+/* ---------------------------------------------------- */
+
+.nav-button.selected {
+    /* 🎯 COR SELECIONADA: Verde Água/Menta (Conforme a imagem) 🎯 */
+    background: linear-gradient(145deg, #28a745, #20c997);
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4); /* Sombra mais forte na cor verde */
+    transform: none; /* Mantém a posição */
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .aux-header-container {
+        gap: 12px;
+        padding: 15px 20px;
+    }
+    .nav-button {
+        min-width: 130px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .aux-header-container {
+        gap: 10px;
+        padding: 15px 10px;
+    }
+    .nav-button {
+        flex: 1 1 auto; /* Permite que 4-5 botões caibam lado a lado */
+        min-width: 120px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .aux-header-container {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permite a quebra */
+        padding: 10px;
+        gap: 8px;
+    }
+    .nav-button {
+        /* Garante que 2-3 caibam por linha */
+        flex: 1 1 calc(33% - 10px); 
+        min-width: auto;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .aux-header-container {
+        flex-direction: column; /* Empilha todos os botões */
+        padding: 10px 5px;
+        gap: 8px;
+    }
+    .nav-button {
+        width: 95%; /* Quase largura total */
+        padding: 10px;
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,151 @@
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+.patients-page-container {
+    padding: 30px; /* Padding padrão nas laterais */
+    max-width: 1400px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+    font-family: 'Inter', sans-serif;
+}
+
+.patients-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee; /* Linha sutil de separação */
+}
+
+.page-title {
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Botões de Ação (Baixar Relatório, Ver Todas, Cadastrar Novo) */
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.header-actions button,
+.header-actions a { /* Incluindo o link de cadastro */
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    /* Estilos de cor omitidos para serem definidos nas classes específicas ou padrão */
+}
+
+/* Layout do Grid de Cartões */
+.patient-cards-grid {
+    display: grid;
+    /* 2 colunas amplas por padrão no desktop */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 30px; 
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    padding: 40px;
+    font-size: 1.2rem;
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .patients-page-container {
+        padding: 25px;
+    }
+    .page-title {
+        font-size: 1.8rem;
+    }
+    .patient-cards-grid {
+        /* Mantém 2 colunas, mas o minmax é mais flexível */
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+        gap: 25px;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .patients-page-container {
+        padding: 20px;
+    }
+    .page-title {
+        font-size: 1.6rem;
+    }
+    .header-actions button,
+    .header-actions a {
+        padding: 8px 14px;
+        font-size: 0.95rem;
+    }
+    .patient-cards-grid {
+        grid-template-columns: 1fr 1fr; /* Força 2 colunas */
+        gap: 20px;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .patients-page-container {
+        padding: 15px;
+    }
+    .page-title {
+        font-size: 1.5rem;
+    }
+    .patients-header-bar {
+        flex-direction: column; /* Empilha título e botões */
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .header-actions button,
+    .header-actions a {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+    .patient-cards-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 15px;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .patients-page-container {
+        padding: 10px;
+    }
+    .page-title {
+        font-size: 1.4rem;
+    }
+    .patients-header-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .header-actions {
+        width: 100%;
+        gap: 5px;
+        flex-wrap: wrap; 
+    }
+    .header-actions button,
+    .header-actions a {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+    .patient-cards-grid {
+        gap: 10px;
+    }
+}

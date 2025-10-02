@@ -1,0 +1,124 @@
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+.appointment-registration-container {
+    max-width: 900px; /* Aumenta a largura máxima para XL */
+    margin: 40px auto;
+    padding: 40px; /* Padding grande */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.title-heading {
+    font-size: 2.0rem;
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+}
+
+.appointment-data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Espaçamento grande */
+}
+
+.input-text, select, .textarea-field {
+    padding: 12px 15px;
+    font-size: 1rem;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .appointment-registration-container {
+        max-width: 800px;
+        padding: 30px;
+    }
+    .title-heading {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .appointment-data-grid {
+        gap: 25px; /* Reduz o espaçamento */
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .appointment-registration-container {
+        max-width: 95%; /* Ocupa mais espaço na tela */
+        padding: 25px;
+    }
+    .title-heading {
+        font-size: 1.6rem;
+    }
+    .appointment-data-grid {
+        gap: 20px;
+    }
+    .input-text, select, .textarea-field {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .appointment-registration-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .title-heading {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    .appointment-data-grid {
+        grid-template-columns: 1fr; /* Força uma única coluna */
+        gap: 15px; /* Reduz o espaçamento vertical */
+    }
+    /* Alinhamento dos botões em telas pequenas */
+    .action-buttons {
+        gap: 10px;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .appointment-registration-container {
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 0; /* Remove borda arredondada para telas muito pequenas */
+    }
+    .title-heading {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    .appointment-data-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 10px;
+    }
+    .input-label {
+        font-size: 0.85rem;
+    }
+    .input-text, select, .textarea-field {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    /* Botões ocupam mais espaço na horizontal */
+    .action-buttons {
+        flex-direction: column; 
+        gap: 8px;
+    }
+    .save-button, .cancel-button {
+        padding: 10px;
+        width: 100%;
+    }
+    .input-search-wrapper {
+        /* Garante que o input e o botão de busca se ajustem */
+        height: auto; 
+    }
+    .search-button {
+        height: 36px; /* Ajusta a altura do botão de busca */
+    }
+}

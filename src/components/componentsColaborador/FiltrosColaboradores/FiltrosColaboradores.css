@@ -1,0 +1,83 @@
+
+/* ESTILOS BASE (XL / Desktop Grande >= 1200px) */
+.filters-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-input, .filter-select {
+    padding: 12px 35px 12px 15px;
+    font-size: 1rem;
+    min-width: 200px;
+    width: 100%;
+}
+
+/* /////////////////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .filters-container {
+        gap: 20px;
+        padding: 18px 20px;
+    }
+    .filter-input, .filter-select {
+        min-width: 180px;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .filters-container {
+        flex-wrap: wrap; /* Quebra a linha */
+        gap: 15px;
+        padding: 15px;
+    }
+    .filter-group {
+        flex: 1 1 30%; /* Tenta manter 3 colunas, mas permite quebra */
+    }
+    .filter-input, .filter-select {
+        padding: 10px 30px 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .filters-container {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .filter-group {
+        width: 100%; /* Cada filtro em uma linha */
+    }
+    .filter-input, .filter-select {
+        width: 100%;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-input, .filter-select {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px 30px 8px 10px;
+    }
+}

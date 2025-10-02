@@ -1,0 +1,173 @@
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+
+footer {
+    /* Fundo Branco e Largura Total (Requisito) */
+    background-color: white;
+    width: 100%;
+    
+    /* Layout fixo na base */
+    border-top: 1px solid #ddd;
+    padding: 20px 30px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    box-sizing: border-box; /* Garante que padding e border não causem overflow */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- SEÇÃO DE LOGOS --- */
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logos img {
+    height: 60px; /* Tamanho padrão da logo */
+    object-fit: contain;
+}
+
+/* --- SEÇÃO DE LINKS --- */
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+}
+
+/* --- SEÇÃO INFERIOR (DIREITOS AUTORAIS) --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.cookie-button {
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    footer {
+        padding: 18px 25px;
+    }
+    .footer-links {
+        gap: 20px;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    footer {
+        padding: 15px 20px;
+    }
+    .footer-logos img {
+        height: 50px;
+    }
+    .footer-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        max-width: 50%; 
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    footer {
+        padding: 15px;
+    }
+    .footer-content {
+        flex-direction: column; 
+        gap: 20px; /* Aumenta o espaço entre as logos e os links */
+        padding-bottom: 10px;
+    }
+    .footer-logos {
+        width: 100%;
+        justify-content: center; /* Centraliza as logos */
+        gap: 15px;
+    }
+    .footer-links {
+        flex-direction: column; 
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+    .footer-bottom {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        padding-top: 10px;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    footer {
+        padding: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column; 
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+    .footer-logos {
+        flex-direction: column; /* Empilha as logos */
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+    .footer-logos img {
+        height: 40px;
+    }
+    
+    .footer-links {
+        flex-direction: column; 
+        align-items: center;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+    .cookie-button {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
