@@ -1,0 +1,147 @@
+/* src/pages/Agendamentos/Agendamentos.css */
+
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+.appointments-page-container {
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header de Data Centralizada (Hoje, 13/12/2025) */
+.appointment-date-header {
+    text-align: center;
+    margin: 20px 0 35px;
+}
+.appointment-date-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+.date-time {
+    color: #6c757d;
+}
+
+/* Header da Lista (Próximos Agendamentos + Botões) */
+.appointments-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+.appointments-list-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+.appointments-list-header .header-actions button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: white;
+    color: #007bff;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+.appointments-list-header .header-actions button:hover {
+    background-color: #f0f8ff;
+}
+
+/* Layout do Grid de Cartões */
+.appointment-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 35px;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    padding: 40px;
+    font-size: 1.2rem;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .appointments-page-container {
+        padding: 25px;
+    }
+    .appointment-date-header h2 {
+        font-size: 2.0rem;
+    }
+    .appointment-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 30px;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .appointments-page-container {
+        padding: 20px;
+    }
+    .appointment-date-header h2 {
+        font-size: 1.8rem;
+    }
+    .appointments-list-header h1 {
+        font-size: 1.5rem;
+    }
+    .appointment-cards-grid {
+        grid-template-columns: 1fr 1fr; /* Força 2 colunas */
+        gap: 20px;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .appointments-page-container {
+        padding: 15px;
+    }
+    .appointment-date-header h2 {
+        font-size: 1.6rem;
+    }
+    .appointments-list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .appointments-list-header .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .appointment-cards-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 15px;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .appointments-page-container {
+        padding: 10px;
+    }
+    .appointment-date-header h2 {
+        font-size: 1.4rem;
+    }
+    .appointments-list-header h1 {
+        font-size: 1.4rem;
+    }
+    .appointments-list-header {
+        align-items: center;
+        text-align: center;
+    }
+    .appointments-list-header .header-actions button {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+}

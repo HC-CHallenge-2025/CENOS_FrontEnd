@@ -1,0 +1,206 @@
+
+/* 1. LAYOUT PRINCIPAL E COMPORTAMENTO DE SOBREPOSIÇÃO */
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001; /* Z-index muito alto para garantir que links e botões sejam clicáveis */
+    height: 100vh;
+    width: 250px; 
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    
+    transform: translateX(-250px); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0); 
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    z-index: 1000; /* Deve ser menor que o da sidebar (1001) */
+}
+
+/* Container de todo o conteúdo interno */
+.menuSideBar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    /* 🎯 CRUCIAL: Garante que o menu receba cliques e não o overlay, mesmo com Z-index 🎯 */
+    position: relative; 
+    z-index: 1002; /* Garante que o conteúdo interno esteja acima do overlay */
+}
+
+/* 2. HEADER DA SIDEBAR (Logo e Botão Fechar) */
+
+.headerSideBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F0F2F5; 
+    gap: 10px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #8e8e8e; 
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #0187CC; 
+}
+
+.logo-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    display: block;
+}
+
+.logo-subtitle {
+    font-size: 0.75rem;
+    color: #AAAAAA; 
+    display: block;
+}
+
+/* 3. NAVEGAÇÃO (Links) */
+
+.sub-menuGroup {
+    margin-top: 20px;
+}
+
+.subTitleSideBar {
+    color: #AAAAAA;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sideBar-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuSideBar-li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menuSideBar-li a:hover {
+    background-color: #F0F2F5; 
+    color: #0187CC; 
+}
+
+/* Estilo do item Ativo/Selecionado */
+.menuSideBar-li.active a {
+    background-color: #F0F2F5; 
+    color: #0187CC; 
+    font-weight: 600;
+}
+
+/* Estilo dos Ícones nos Links */
+.menuSideBar-li a span {
+    margin-right: 10px;
+    color: #8e8e8e; 
+    font-size: 1.2rem;
+}
+
+.menuSideBar-li.active a span {
+    color: #0187CC; 
+}
+
+/* 4. FOOTER DA SIDEBAR (Perfil e Sair) */
+
+.footerSideBar {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #F0F2F5;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0187CC; 
+    color: #FFFFFF; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.user-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-info span {
+    font-size: 0.8rem;
+    color: #AAAAAA; 
+}
+
+.logoutButton-div {
+    width: 100%;
+}
+
+.logoutButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border: 1px solid #dc3545; 
+    background-color: #FFFFFF; 
+    color: #dc3545; 
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+    background-color: #f8d7da; 
+}

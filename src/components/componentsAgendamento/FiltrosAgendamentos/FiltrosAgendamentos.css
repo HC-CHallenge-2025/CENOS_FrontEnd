@@ -1,0 +1,86 @@
+/* src/components/Filtros/FiltrosAgendamentos.css */
+
+/* ESTILOS BASE (XL / Desktop Grande >= 1200px) */
+.filters-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 180px;
+}
+
+/* ///////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .filters-container {
+        gap: 20px;
+        padding: 18px 20px;
+    }
+    .filter-select {
+        min-width: 160px;
+        padding: 9px 14px;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .filters-container {
+        flex-wrap: wrap; /* Permite a quebra para duas linhas */
+        gap: 15px;
+        padding: 15px;
+    }
+    .filter-group {
+        flex: 1 1 45%; /* Força 2 filtros por linha */
+    }
+    .filter-select {
+        min-width: 100%;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .filters-container {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+    }
+    .filter-group {
+        width: 100%; /* Cada filtro em uma linha */
+    }
+    .filter-select {
+        width: 100%;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-select {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,172 @@
+/* src/components/Header/Header.css */
+
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+
+.main-header {
+    /* Largura total, centralizado pelo App.tsx */
+    max-width: 1400px;
+    margin: 20px auto;
+    
+    /* 🎯 Gradiente principal (Azul para Verde) 🎯 */
+    background: linear-gradient(145deg, #187bcd, #17a2b8);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra forte para destacar */
+    position: relative; /* Para posicionar o badge */
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Informações do Usuário (Olá, Paulo!) --- */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px; /* Espaço antes do texto dinâmico */
+}
+
+
+.user-info h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.user-info p {
+    font-size: 1.0rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- Badge de Notificações (28 novas) --- */
+.notifications {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Texto Dinâmico (Parte inferior) --- */
+.header-dynamic-text p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.95;
+    /* Adiciona um pequeno padding para separá-lo do conteúdo acima em telas pequenas */
+    padding-top: 5px; 
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-header {
+        padding: 20px 25px;
+    }
+    .user-info h1 {
+        font-size: 2.0rem;
+    }
+    .notifications {
+        top: 20px;
+        right: 25px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    .header-dynamic-text p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-header {
+        padding: 18px 20px;
+    }
+    .user-info h1 {
+        font-size: 1.8rem;
+    }
+    .user-info::before {
+        width: 45px;
+        height: 45px;
+    }
+    .notifications {
+        top: 15px;
+        right: 20px;
+        font-size: 0.8rem;
+    }
+    .header-dynamic-text p {
+        font-size: 1.0rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .main-header {
+        padding: 15px;
+    }
+    .user-info {
+        margin-bottom: 15px;
+    }
+    .user-info h1 {
+        font-size: 1.6rem;
+    }
+    .user-info p {
+        font-size: 0.9rem;
+    }
+    .notifications {
+        top: 10px;
+        right: 15px;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    .header-dynamic-text p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .main-header {
+        padding: 12px;
+        border-radius: 0; /* Ocupa a largura total do mobile */
+    }
+    .user-info {
+        flex-direction: column; /* Empilha o avatar e o texto de saudação */
+        align-items: flex-start;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+    .user-info h1 {
+        font-size: 1.4rem;
+    }
+    .user-info::before {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+    }
+    /* Ajusta a posição do texto de nome para compensar o avatar empilhado */
+    .user-info div {
+        margin-left: 55px; 
+    }
+    .notifications {
+        top: 12px;
+        right: 12px;
+        padding: 4px 8px;
+    }
+    .header-dynamic-text p {
+        font-size: 0.9rem;
+        padding-top: 0;
+    }
+}

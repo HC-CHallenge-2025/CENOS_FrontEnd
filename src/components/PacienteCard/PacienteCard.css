@@ -1,0 +1,74 @@
+.patient-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+.patient-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.info-label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 5px;
+}
+.gender-label {
+    font-weight: normal;
+    font-style: italic;
+    margin-left: 5px;
+}
+.patient-score {
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Cores Condicionais */
+.score-baixa { background-color: #dc3545; } /* Vermelho */
+.score-media { background-color: #ffc107; color: #333; } /* Amarelo */
+.score-alta { background-color: #28a745; } /* Verde */
+
+.card-body p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+.card-actions {
+    text-align: right;
+    margin-top: 15px;
+}
+.details-button {
+    background: none;
+    border: 1px solid #ccc;
+    color: #6c757d;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card-expansion {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}

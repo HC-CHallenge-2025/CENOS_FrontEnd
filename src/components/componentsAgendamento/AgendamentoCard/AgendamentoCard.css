@@ -1,0 +1,102 @@
+/* src/components/Agendamentos/AgendamentoCard.css */
+
+/* ESTILO BASE (XL / Desktop Grande >= 1200px) */
+.agendamento-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px; /* Padding padrão */
+    position: relative;
+    background-color: white;
+}
+.card-tags {
+    gap: 15px; /* Espaçamento maior */
+    margin-bottom: 12px;
+}
+.tag {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+.details-button {
+    top: 20px; /* Alinha o botão mais baixo */
+    right: 20px;
+    font-size: 0.95rem;
+}
+.card-datetime {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+}
+.card-description {
+    padding-top: 12px;
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+/* RESPONSIVIDADE */
+
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .agendamento-card {
+        padding: 18px;
+    }
+    .card-datetime {
+        font-size: 1rem;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .agendamento-card {
+        padding: 15px;
+    }
+    .card-tags {
+        gap: 10px;
+    }
+    .card-datetime {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    .card-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .agendamento-card {
+        padding: 12px;
+    }
+    .card-tags {
+        flex-wrap: wrap; /* Permite a quebra se a tela for estreita */
+        margin-bottom: 8px;
+    }
+    .details-button {
+        top: 12px;
+        right: 12px;
+    }
+    .card-datetime {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .agendamento-card {
+        padding: 10px;
+    }
+    .card-tags {
+        flex-direction: column; /* Empilha as tags verticalmente */
+        gap: 5px;
+    }
+    .tag {
+        align-self: flex-start;
+        font-size: 0.8rem;
+    }
+    .details-button {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+    }
+    .card-datetime {
+        font-size: 0.85rem;
+    }
+}

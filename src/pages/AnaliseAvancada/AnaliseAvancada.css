@@ -1,0 +1,144 @@
+/* src/components/Dashboard/DashboardCard.css */
+
+/* ESTILOS BASE (XL - Extra Large / Desktop Grande >= 1200px) */
+.dashboard-card {
+    
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    
+    /* 🎯 Padding Simétrico para o conteúdo lateral 🎯 */
+    padding: 1.5rem; 
+    
+    
+    display: flex;
+    justify-content: space-between; /* Empurra o conteúdo para as laterais */
+    align-items: flex-start;
+    height: 140px; 
+    min-height: 10rem;
+    transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-0.1rem);
+}
+
+.card-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.2rem;
+}
+
+.card-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    display: block; 
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- ESTILOS DOS ÍCONES (Centralização e Tamanho) --- */
+.icon-container {
+    width: 3.5rem; 
+    height: 3.5rem; 
+    padding: 0.75rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; 
+    flex-shrink: 0; 
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* Large (LG) - Laptop/Desktop (>= 992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .dashboard-card {
+        padding: 1.3rem; /* 1.3rem em todos os lados */
+        height: 130px;
+    }
+    .card-value {
+        font-size: 2.3rem;
+    }
+    .icon-container {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* Medium (MD) - Tablet (>= 768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .dashboard-card {
+        padding: 1.0rem; /* 1.0rem em todos os lados */
+        height: 115px;
+    }
+    .card-title {
+        font-size: 0.85rem;
+    }
+    .card-value {
+        font-size: 2.0rem;
+    }
+    .icon-container {
+        width: 2.7rem;
+        height: 2.7rem;
+        font-size: 1.2rem;
+        /* REMOVIDO: margin-left: 0.5rem; <-- Este margin desfaz a simetria lateral. */
+    }
+}
+
+/* Small (SM) - Mobile Grande (>= 576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .dashboard-card {
+        padding: 1.0rem; /* 1.0rem em todos os lados */
+        height: 105px;
+    }
+    .card-title {
+        font-size: 0.8rem;
+    }
+    .card-value {
+        font-size: 1.8rem;
+    }
+    .card-subtitle {
+        font-size: 0.75rem;
+    }
+    .icon-container {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra Small (XS) - Mobile (<= 575px) */
+@media (max-width: 575px) {
+    .dashboard-card {
+        /* Padding horizontal e vertical ajustado */
+        padding: 0.8rem; 
+        height: auto;
+        /* Mantém o espaçamento lateral garantido pelo padding */
+        gap: 0.5rem; 
+    }
+    .card-content {
+        flex-grow: 1;
+    }
+    .card-value {
+        font-size: 1.6rem;
+    }
+    .card-subtitle {
+        font-size: 0.7rem;
+    }
+    .icon-container {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1.0rem;
+    }
+}

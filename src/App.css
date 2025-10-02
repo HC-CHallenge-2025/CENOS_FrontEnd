@@ -1,0 +1,52 @@
+/* Estilos básicos para a barra de navegação */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Esconde a barra por padrão */
+  width: 250px;
+  height: 100%;
+  background-color: #ff0000;
+  color: #fff;
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* Move a barra para a posição visível */
+}
+
+/* Estilos para o botão de menu (visível apenas em telas menores) */
+.menu-button {
+  display: block; /* Visível por padrão em telas menores */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+/* Estilos para telas maiores que tablets (usando media query) */
+@media (min-width: 768px) {
+  .sidebar {
+    position: static; /* Volta para o fluxo normal do documento */
+    left: 0; /* Garante que a barra esteja sempre visível */
+    width: 250px;
+    height: 100vh;
+    box-shadow: none;
+  }
+  
+  .menu-button {
+    display: none; /* Esconde o botão em telas maiores */
+  }
+  
+  .app-container {
+    display: flex; /* Alinha a barra lateral e o conteúdo */
+  }
+  
+  .content {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    padding: 20px;
+  }
+}
+
